@@ -33,14 +33,22 @@ class Devices {
         return this._currentMod;
     }
     on () {
-        return this._state = "on";
+        this._state = "on";
+        console.log ("on");
     }
     off () {
-        return this._state = "off";
+        this._state = "off";
+        console.log ("off");
     }
 }
 
 class ClimateControl extends Devices {
+    constructor (brand, model, color, temperatureAir, temperatureFloor, humidity) {
+        super (brand, model, color);
+        this._temperatureAir = temperatureAir;
+        this._temperatureFloor = temperatureFloor;
+        this._humidity = humidity;
+    }
     set temperatureAir (number) {
         this._temperatureAir = number;
     }
@@ -74,6 +82,11 @@ class ClimateControl extends Devices {
 }
 
 class Microwave extends Devices {
+    constructor (brand, model, color, power, time) {
+        super (brand, model, color);
+        this._power = power;
+        this._time = time;
+    }
     set power (number) {
         this._power = number;
     }
@@ -123,7 +136,7 @@ class Home {
        let index = this._devices.indexOf (device);
        this._devices.splice(index - 1, 1);
     }
-    get Devices() {
+    get devices() {
        return this._devices;
     }
  }
