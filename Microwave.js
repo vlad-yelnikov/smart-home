@@ -2,20 +2,19 @@
 
 function Microwave(name) {
     Device.call(this, name);
+    this._time = 0;
+    this._mode = '';
 }
 
 Microwave.prototype = Object.create(Device.prototype);
-
-Microwave.prototype._time = 0;
-
-Microwave.prototype._mode = '';
+Microwave.prototype.constructor = Microwave;
 
 Microwave.prototype.getTime = function() {
     return this._time;
 };
 
 Microwave.prototype.setTime = function(time) {
-    if (typeof time === 'number') this._time = time;
+    this._time = time;
 };
 
 Microwave.prototype.getMode = function() {

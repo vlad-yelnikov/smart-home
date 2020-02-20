@@ -2,16 +2,15 @@
 
 function Device(name) {
     this._name = name;
+    this._state = false;
 }
-
-Device.prototype._state = false;
 
 Device.prototype.getName = function() {
     return this._name;
 };
 
 Device.prototype.setName = function(name) {
-    if (typeof name === 'string') this._name = name;
+     this._name = name;
 };
 
 Device.prototype.getState = function() {
