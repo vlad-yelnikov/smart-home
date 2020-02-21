@@ -18,10 +18,10 @@ House.prototype.addDevice = function(device) {
 };
 
 House.prototype.getDevice = function(name) {
-    function check(value) {
+    function condition(value) {
         return value.getName() == name;
     }
-    return this.getAllDevices().find(check);
+    return this.getAllDevices().find(condition);
 };
 
 House.prototype.delDevice = function(name) {
