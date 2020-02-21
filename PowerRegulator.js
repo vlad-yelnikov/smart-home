@@ -1,26 +1,21 @@
 'use strict';
 
 function PowerRegulator(power) {
-    this._power = power;
+    if (power >= 0 && power <= 100) this._power = power;
 }
-
-PowerRegulator.prototype = Object.create(PowerRegulator.prototype);
-PowerRegulator.prototype.constructor = PowerRegulator;
 
 PowerRegulator.prototype.getPower = function() {
     return this._power;
 };
 
 PowerRegulator.prototype.setPower = function(value) {
-    this._power = value;
+    if (value >= 0 && value <= 100) this._power = value;
 };
 
 PowerRegulator.prototype.increasePower = function(value) {
-    this._power += value;
+    if (this._power + value <= 100) this._power += value;
 };
 
 PowerRegulator.prototype.decreasePower = function(value) {
-    this._power -= value;
+    if (this._power - value >= 0) this._power -= value;
 };
-
-var powerRegulator = new PowerRegulator(100);

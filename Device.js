@@ -10,7 +10,7 @@ Device.prototype.getName = function() {
 };
 
 Device.prototype.setName = function(name) {
-     this._name = name;
+    this._name = name;
 };
 
 Device.prototype.getState = function() {

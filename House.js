@@ -18,10 +18,10 @@ House.prototype.addDevice = function(device) {
 };
 
 House.prototype.getDevice = function(name) {
-    function condition(value) {
+    function check(value) {
         return value.getName() == name;
     }
-    return this.getAllDevices().find(condition);
+    return this.getAllDevices().find(check);
 };
 
 House.prototype.delDevice = function(name) {
@@ -33,5 +33,3 @@ House.prototype.delDevice = function(name) {
 House.prototype.getAllDevices = function() {
     return this._devices;
 };
-
-var house = new House('my house');

@@ -1,7 +1,8 @@
 'use strict';
 
-function Microwave(name) {
+function Microwave(name, power) {
     Device.call(this, name);
+    this._power = power;
     this._time = 0;
     this._mode = '';
 }
@@ -33,4 +34,18 @@ Microwave.prototype.grill = function() {
     this._mode = 'grill';
 };
 
-var microwave = new Microwave('LG');
+Microwave.prototype.getPower = function() {
+    return this._power.getPower();
+};
+
+Microwave.prototype.setPower = function(value) {
+    return this._power.setPower(value);
+};
+
+Microwave.prototype.increasePower = function(value) {
+    return this._power.increasePower(value);
+};
+
+Microwave.prototype.decreasePower = function(value) {
+    return this._power.decreasePower(value);
+};
