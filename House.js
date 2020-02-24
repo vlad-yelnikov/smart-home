@@ -18,10 +18,9 @@ House.prototype.addDevice = function(device) {
 };
 
 House.prototype.getDevice = function(name) {
-    function condition(value) {
-        return value.getName() == name;
-    }
-    return this.getAllDevices().find(condition);
+    return this._devices.find(function(device) {
+        return device.getName() == name;
+    });
 };
 
 House.prototype.delDevice = function(name) {

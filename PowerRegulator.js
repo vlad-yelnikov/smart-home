@@ -1,7 +1,7 @@
 'use strict';
 
 function PowerRegulator(power) {
-    if (power >= 0 && power <= 100) this._power = power;
+    this._power = power;
 }
 
 PowerRegulator.prototype.getPower = function() {
